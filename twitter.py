@@ -1,10 +1,19 @@
 import tweepy
 import time
+from os import environ
 
 # KEYS
-auth = tweepy.OAuthHandler('XUAGz64NEy6deSYf4eOrTEXs0','ujFaK0wnEQ8WWq7d4BH6A9WWYB4ORPynWDGHAnvYFCI5boxN9J')
 
-auth.set_access_token('1356366441612599297-JTOlqpQIGIKJkI3UpP5jGEGiR9YNFc','5ql6FmYG6YIq9qe94PvRUO66sbKrD93jaKZcJWkxXJPrb')
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
+
+# AUTH
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY , CONSUMER_SECRET)
+
+auth.set_access_token(ACCESS_KEY , ACCESS_SECRET)
 
 # auth and set bot to sleep when reach the max twitter actions permitted
 
