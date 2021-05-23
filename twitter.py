@@ -27,13 +27,13 @@ user = api.me()
 #    print(follower.name)
 
 search = '#100DaysOfCode'
-nrTweets = 10
+nrTweets = 5
 
 for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
     try:
         print('Retweeted')
         tweet.retweet()
-        time.sleep(10)
+        time.sleep(60*60)
     except tweepy.TweepError as e:
         print(e.reason)    
     except StopIteration:    
